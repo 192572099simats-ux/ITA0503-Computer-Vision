@@ -1,8 +1,21 @@
 import cv2
-image = cv2.imread(r"C:\Users\Dhanya Sri\OneDrive\Desktop\CV\image.jpg")
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-cv2.imwrite(r"C:\Users\Dhanushree\OneDrive\Desktop\CV\gray_image.jpg", gray_image)
-cv2.imshow("Original Image", image)
-cv2.imshow("Grayscale Image", gray_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+# Read the image
+image = cv2.imread("image.jpg")
+
+# Check if the image is loaded
+if image is None:
+    print("Error: Image not found!")
+else:
+    # Convert to grayscale
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Display images
+    cv2.imshow("Original Image", image)
+    cv2.imshow("Gray-scale Image", gray_image)
+
+    # Save the grayscale image
+    cv2.imwrite("gray_image.jpg", gray_image)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
